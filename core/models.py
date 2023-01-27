@@ -2,14 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, AbstractUser
 
 class User(AbstractUser):
-    UNKNOWN = "unknown"
-    USER= "user"
-    ADMINISTRATOR = "administrator"
-    ROLE = [(UNKNOWN, "unknown"), (USER, "user"), (ADMINISTRATOR, "administrator")]
-
-    role = models.CharField(max_length=14, choices=ROLE, default=UNKNOWN)
-    age = models.IntegerField()
-
+    REQUIRED_FIELDS = []
     def __str__(self):
         return self.username
 
